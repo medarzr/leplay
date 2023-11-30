@@ -1,3 +1,30 @@
 {
-  "extends": "@tsconfig/react-native/tsconfig.json"
+  "extends": "neat-configs/native/tsconfig.json",
+  "compilerOptions": {
+    "types": ["jest"],
+    "lib": [
+      "dom",
+      "es2015",
+      "es2016",
+      "es2017",
+      "es2018",
+      "es2021",
+      "webworker"
+    ],
+    "outDir": "./dist",
+    "baseUrl": "./src",
+    "paths": {
+      "~/*": ["./*"]
+    },
+    "experimentalDecorators": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*", "__tests__", ".eslintrc.js", "**/*.js"],
+  "exclude": [
+    "dist",
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "jest.config.js",
+  ]
 }

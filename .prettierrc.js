@@ -1,7 +1,5 @@
 module.exports = {
-  arrowParens: 'avoid',
-  bracketSameLine: true,
-  bracketSpacing: false,
-  singleQuote: true,
-  trailingComma: 'all',
+  ...require('neat-configs/native/prettier'),
+  printWidth: 80,
+  arrowParens: "avoid",
 };
