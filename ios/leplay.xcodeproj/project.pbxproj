@@ -14,6 +14,26 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-leplay-leplayTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-leplay-leplayTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		E7E943472B19EB4F008A8F06 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7E943342B19EB4F008A8F06 /* Fontisto.ttf */; };
+		E7E943482B19EB4F008A8F06 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7E943352B19EB4F008A8F06 /* Octicons.ttf */; };
+		E7E943492B19EB4F008A8F06 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7E943362B19EB4F008A8F06 /* Feather.ttf */; };
+		E7E9434A2B19EB4F008A8F06 /* FontAwesome6_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7E943372B19EB4F008A8F06 /* FontAwesome6_Regular.ttf */; };
+		E7E9434B2B19EB4F008A8F06 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7E943382B19EB4F008A8F06 /* Entypo.ttf */; };
+		E7E9434C2B19EB4F008A8F06 /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7E943392B19EB4F008A8F06 /* FontAwesome5_Brands.ttf */; };
+		E7E9434D2B19EB4F008A8F06 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7E9433A2B19EB4F008A8F06 /* MaterialCommunityIcons.ttf */; };
+		E7E9434E2B19EB4F008A8F06 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7E9433B2B19EB4F008A8F06 /* AntDesign.ttf */; };
+		E7E9434F2B19EB4F008A8F06 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7E9433C2B19EB4F008A8F06 /* Foundation.ttf */; };
+		E7E943502B19EB4F008A8F06 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7E9433D2B19EB4F008A8F06 /* Ionicons.ttf */; };
+		E7E943512B19EB4F008A8F06 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7E9433E2B19EB4F008A8F06 /* FontAwesome5_Solid.ttf */; };
+		E7E943522B19EB4F008A8F06 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7E9433F2B19EB4F008A8F06 /* FontAwesome5_Regular.ttf */; };
+		E7E943532B19EB4F008A8F06 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7E943402B19EB4F008A8F06 /* FontAwesome.ttf */; };
+		E7E943542B19EB4F008A8F06 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7E943412B19EB4F008A8F06 /* Zocial.ttf */; };
+		E7E943552B19EB4F008A8F06 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7E943422B19EB4F008A8F06 /* EvilIcons.ttf */; };
+		E7E943562B19EB4F008A8F06 /* FontAwesome6_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7E943432B19EB4F008A8F06 /* FontAwesome6_Solid.ttf */; };
+		E7E943572B19EB4F008A8F06 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7E943442B19EB4F008A8F06 /* SimpleLineIcons.ttf */; };
+		E7E943582B19EB4F008A8F06 /* FontAwesome6_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7E943452B19EB4F008A8F06 /* FontAwesome6_Brands.ttf */; };
+		E7E943592B19EB4F008A8F06 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7E943462B19EB4F008A8F06 /* MaterialIcons.ttf */; };
+		E7E9435C2B19F194008A8F06 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E9435B2B19F194008A8F06 /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,25 +63,27 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-leplay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-leplay.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = leplay/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-leplay-leplayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-leplay-leplayTests.release.xcconfig"; path = "Target Support Files/Pods-leplay-leplayTests/Pods-leplay-leplayTests.release.xcconfig"; sourceTree = "<group>"; };
-		E7E942D22B18EE3E008A8F06 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Solid.ttf; sourceTree = "<group>"; };
-		E7E942D32B18EE3E008A8F06 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialCommunityIcons.ttf; sourceTree = "<group>"; };
-		E7E942D42B18EE3F008A8F06 /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zocial.ttf; sourceTree = "<group>"; };
-		E7E942D52B18EE3F008A8F06 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Brands.ttf; sourceTree = "<group>"; };
-		E7E942D62B18EE3F008A8F06 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ionicons.ttf; sourceTree = "<group>"; };
-		E7E942D72B18EE3F008A8F06 /* AntDesign.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AntDesign.ttf; sourceTree = "<group>"; };
-		E7E942D82B18EE3F008A8F06 /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
-		E7E942D92B18EE3F008A8F06 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
-		E7E942DA2B18EE3F008A8F06 /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Feather.ttf; sourceTree = "<group>"; };
-		E7E942DB2B18EE3F008A8F06 /* FontAwesome6_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome6_Brands.ttf; sourceTree = "<group>"; };
-		E7E942DC2B18EE3F008A8F06 /* FontAwesome6_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome6_Solid.ttf; sourceTree = "<group>"; };
-		E7E942DD2B18EE3F008A8F06 /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
-		E7E942DE2B18EE3F008A8F06 /* Foundation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Foundation.ttf; sourceTree = "<group>"; };
-		E7E942DF2B18EE3F008A8F06 /* FontAwesome6_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome6_Regular.ttf; sourceTree = "<group>"; };
-		E7E942E02B18EE3F008A8F06 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
-		E7E942E12B18EE3F008A8F06 /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fontisto.ttf; sourceTree = "<group>"; };
-		E7E942E22B18EE3F008A8F06 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Regular.ttf; sourceTree = "<group>"; };
-		E7E942E32B18EE3F008A8F06 /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Entypo.ttf; sourceTree = "<group>"; };
-		E7E942E42B18EE3F008A8F06 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
+		E7E943342B19EB4F008A8F06 /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fontisto.ttf; sourceTree = "<group>"; };
+		E7E943352B19EB4F008A8F06 /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
+		E7E943362B19EB4F008A8F06 /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Feather.ttf; sourceTree = "<group>"; };
+		E7E943372B19EB4F008A8F06 /* FontAwesome6_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome6_Regular.ttf; sourceTree = "<group>"; };
+		E7E943382B19EB4F008A8F06 /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Entypo.ttf; sourceTree = "<group>"; };
+		E7E943392B19EB4F008A8F06 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Brands.ttf; sourceTree = "<group>"; };
+		E7E9433A2B19EB4F008A8F06 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialCommunityIcons.ttf; sourceTree = "<group>"; };
+		E7E9433B2B19EB4F008A8F06 /* AntDesign.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AntDesign.ttf; sourceTree = "<group>"; };
+		E7E9433C2B19EB4F008A8F06 /* Foundation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Foundation.ttf; sourceTree = "<group>"; };
+		E7E9433D2B19EB4F008A8F06 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ionicons.ttf; sourceTree = "<group>"; };
+		E7E9433E2B19EB4F008A8F06 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Solid.ttf; sourceTree = "<group>"; };
+		E7E9433F2B19EB4F008A8F06 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Regular.ttf; sourceTree = "<group>"; };
+		E7E943402B19EB4F008A8F06 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		E7E943412B19EB4F008A8F06 /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zocial.ttf; sourceTree = "<group>"; };
+		E7E943422B19EB4F008A8F06 /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
+		E7E943432B19EB4F008A8F06 /* FontAwesome6_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome6_Solid.ttf; sourceTree = "<group>"; };
+		E7E943442B19EB4F008A8F06 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
+		E7E943452B19EB4F008A8F06 /* FontAwesome6_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome6_Brands.ttf; sourceTree = "<group>"; };
+		E7E943462B19EB4F008A8F06 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
+		E7E9435A2B19F194008A8F06 /* leplay-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "leplay-Bridging-Header.h"; sourceTree = "<group>"; };
+		E7E9435B2B19F194008A8F06 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -105,13 +127,15 @@
 		13B07FAE1A68108700A75B9A /* leplay */ = {
 			isa = PBXGroup;
 			children = (
-				E7E942D12B18ED8E008A8F06 /* Fonts */,
+				E7E943332B19EB4F008A8F06 /* Fonts */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				E7E9435B2B19F194008A8F06 /* File.swift */,
+				E7E9435A2B19F194008A8F06 /* leplay-Bridging-Header.h */,
 			);
 			name = leplay;
 			sourceTree = "<group>";
@@ -168,30 +192,30 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		E7E942D12B18ED8E008A8F06 /* Fonts */ = {
+		E7E943332B19EB4F008A8F06 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				E7E942D72B18EE3F008A8F06 /* AntDesign.ttf */,
-				E7E942E32B18EE3F008A8F06 /* Entypo.ttf */,
-				E7E942DD2B18EE3F008A8F06 /* EvilIcons.ttf */,
-				E7E942DA2B18EE3F008A8F06 /* Feather.ttf */,
-				E7E942E02B18EE3F008A8F06 /* FontAwesome.ttf */,
-				E7E942D52B18EE3F008A8F06 /* FontAwesome5_Brands.ttf */,
-				E7E942E22B18EE3F008A8F06 /* FontAwesome5_Regular.ttf */,
-				E7E942D22B18EE3E008A8F06 /* FontAwesome5_Solid.ttf */,
-				E7E942DB2B18EE3F008A8F06 /* FontAwesome6_Brands.ttf */,
-				E7E942DF2B18EE3F008A8F06 /* FontAwesome6_Regular.ttf */,
-				E7E942DC2B18EE3F008A8F06 /* FontAwesome6_Solid.ttf */,
-				E7E942E12B18EE3F008A8F06 /* Fontisto.ttf */,
-				E7E942DE2B18EE3F008A8F06 /* Foundation.ttf */,
-				E7E942D62B18EE3F008A8F06 /* Ionicons.ttf */,
-				E7E942D32B18EE3E008A8F06 /* MaterialCommunityIcons.ttf */,
-				E7E942E42B18EE3F008A8F06 /* MaterialIcons.ttf */,
-				E7E942D82B18EE3F008A8F06 /* Octicons.ttf */,
-				E7E942D92B18EE3F008A8F06 /* SimpleLineIcons.ttf */,
-				E7E942D42B18EE3F008A8F06 /* Zocial.ttf */,
+				E7E943342B19EB4F008A8F06 /* Fontisto.ttf */,
+				E7E943352B19EB4F008A8F06 /* Octicons.ttf */,
+				E7E943362B19EB4F008A8F06 /* Feather.ttf */,
+				E7E943372B19EB4F008A8F06 /* FontAwesome6_Regular.ttf */,
+				E7E943382B19EB4F008A8F06 /* Entypo.ttf */,
+				E7E943392B19EB4F008A8F06 /* FontAwesome5_Brands.ttf */,
+				E7E9433A2B19EB4F008A8F06 /* MaterialCommunityIcons.ttf */,
+				E7E9433B2B19EB4F008A8F06 /* AntDesign.ttf */,
+				E7E9433C2B19EB4F008A8F06 /* Foundation.ttf */,
+				E7E9433D2B19EB4F008A8F06 /* Ionicons.ttf */,
+				E7E9433E2B19EB4F008A8F06 /* FontAwesome5_Solid.ttf */,
+				E7E9433F2B19EB4F008A8F06 /* FontAwesome5_Regular.ttf */,
+				E7E943402B19EB4F008A8F06 /* FontAwesome.ttf */,
+				E7E943412B19EB4F008A8F06 /* Zocial.ttf */,
+				E7E943422B19EB4F008A8F06 /* EvilIcons.ttf */,
+				E7E943432B19EB4F008A8F06 /* FontAwesome6_Solid.ttf */,
+				E7E943442B19EB4F008A8F06 /* SimpleLineIcons.ttf */,
+				E7E943452B19EB4F008A8F06 /* FontAwesome6_Brands.ttf */,
+				E7E943462B19EB4F008A8F06 /* MaterialIcons.ttf */,
 			);
-			name = Fonts;
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,7 +277,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1500;
 					};
 				};
 			};
@@ -288,8 +312,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7E943522B19EB4F008A8F06 /* FontAwesome5_Regular.ttf in Resources */,
+				E7E943472B19EB4F008A8F06 /* Fontisto.ttf in Resources */,
+				E7E9434C2B19EB4F008A8F06 /* FontAwesome5_Brands.ttf in Resources */,
+				E7E943502B19EB4F008A8F06 /* Ionicons.ttf in Resources */,
+				E7E943512B19EB4F008A8F06 /* FontAwesome5_Solid.ttf in Resources */,
+				E7E9434B2B19EB4F008A8F06 /* Entypo.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				E7E9434E2B19EB4F008A8F06 /* AntDesign.ttf in Resources */,
+				E7E943542B19EB4F008A8F06 /* Zocial.ttf in Resources */,
+				E7E9434F2B19EB4F008A8F06 /* Foundation.ttf in Resources */,
+				E7E943582B19EB4F008A8F06 /* FontAwesome6_Brands.ttf in Resources */,
+				E7E943492B19EB4F008A8F06 /* Feather.ttf in Resources */,
+				E7E943572B19EB4F008A8F06 /* SimpleLineIcons.ttf in Resources */,
+				E7E943552B19EB4F008A8F06 /* EvilIcons.ttf in Resources */,
+				E7E943482B19EB4F008A8F06 /* Octicons.ttf in Resources */,
+				E7E943532B19EB4F008A8F06 /* FontAwesome.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				E7E9434D2B19EB4F008A8F06 /* MaterialCommunityIcons.ttf in Resources */,
+				E7E943562B19EB4F008A8F06 /* FontAwesome6_Solid.ttf in Resources */,
+				E7E9434A2B19EB4F008A8F06 /* FontAwesome6_Regular.ttf in Resources */,
+				E7E943592B19EB4F008A8F06 /* MaterialIcons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +502,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
+				E7E9435C2B19F194008A8F06 /* File.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,6 +522,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-leplay-leplayTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -505,6 +550,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-leplay-leplayTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = leplayTests/Info.plist;
@@ -546,6 +592,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = leplay;
+				SWIFT_OBJC_BRIDGING_HEADER = "leplay-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -572,6 +619,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = leplay;
+				SWIFT_OBJC_BRIDGING_HEADER = "leplay-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

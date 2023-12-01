@@ -2,8 +2,11 @@ import React from 'react';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import { Icon } from 'react-native-vector-icons/Icon';
 
-import HomeScreen from '../screens/HomeScreen';
+import { colors } from '~/lib/theme/colors';
+
+import HomeScreen from '../../screens/Map/MapScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -11,13 +14,10 @@ export default function TabNavigator() {
   return (
     <Tab.Navigator
       screenOptions={{
-        // headerShown: false,
-        // tabBarInactiveTintColor: colors.textSecondary,
+        tabBarShowLabel: false,
+        tabBarActiveTintColor: colors.primaryGreen,
         tabBarStyle: {
           borderTopWidth: 0,
-        },
-        tabBarLabelStyle: {
-          // fontSize: 12,
         },
       }}
     >
@@ -26,15 +26,15 @@ export default function TabNavigator() {
         component={HomeScreen}
         options={{
           tabBarIcon: tabBarIcon(FontAwesome, 'map-marker'),
-          // tabBarLabel: i18n.t('sections.catalog'),
+          headerShown: false,
         }}
       />
-      <Tab.Screen name="Settings2" component={HomeScreen} />
+      {/* <Tab.Screen name="Settings2" component={HomeScreen} /> */}
     </Tab.Navigator>
   );
 }
 
-const tabBarIcon = (Icon, name: string) =>
+const tabBarIcon = (FontIcon: typeof Icon, name: string) =>
   function tabIcon({ color }: { color: string }) {
-    return <Icon name={name} size={24} color={color} />;
+    return <FontIcon name={name} size={24} color={color} />;
   };
