@@ -4,4 +4,6 @@ export const colors = {
   black: '#000000',
   red: '#FF5454',
   orange: '#F5B879',
+  grayDescriptionTitleText: '#8E8E93',
+  grayDescriptionText: '#5A5A5A',
 };

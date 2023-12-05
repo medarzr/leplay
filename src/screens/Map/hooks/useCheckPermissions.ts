@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { PermissionsAndroid } from 'react-native';
 import Geolocation from 'react-native-geolocation-service';
 
+import { i18n } from '~/lib/localization/localize';
 import toaster from '~/lib/notify/toaster';
 import { isIos } from '~/utils/device';
 
@@ -21,7 +22,7 @@ export default function useCheckPermissions({
     } else {
       toaster({
         type: 'error',
-        body: 'Ошибка! Пожалуйста, разрешите приложению использовать геолокацию',
+        body: i18n.t('notifications.geoError'),
       });
     }
 
@@ -51,7 +52,7 @@ export default function useCheckPermissions({
     } else {
       toaster({
         type: 'error',
-        body: 'Ошибка! Пожалуйста, разрешите приложению использовать геолокацию',
+        body: i18n.t('notifications.geoError'),
       });
     }
 

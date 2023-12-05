@@ -1,0 +1,10 @@
+{
+  "test": "hello",
+  "notifications": {
+    "geoError": "Error! Please allow the application to use geolocation"
+  },  
+  "sportCard": {
+    "description": "Description",
+    "organizer": "Organizer: "
+  }
+}
