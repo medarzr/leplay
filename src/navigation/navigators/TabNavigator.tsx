@@ -5,6 +5,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { Icon } from 'react-native-vector-icons/Icon';
 
 import { colors } from '~/lib/theme/colors';
+import LoginScreen from '~/screens/Login/LoginScreen';
 
 import HomeScreen from '../../screens/Map/MapScreen';
 
@@ -29,7 +30,14 @@ export default function TabNavigator() {
           headerShown: false,
         }}
       />
-      {/* <Tab.Screen name="Settings2" component={HomeScreen} /> */}
+      <Tab.Screen
+        name="Login"
+        component={LoginScreen}
+        options={{
+          tabBarIcon: tabBarIcon(FontAwesome, 'user'),
+          headerShown: false,
+        }}
+      />
     </Tab.Navigator>
   );
 }

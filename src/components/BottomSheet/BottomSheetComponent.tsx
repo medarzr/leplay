@@ -1,9 +1,9 @@
 import React, { useCallback, useMemo } from 'react';
 
-import { BottomSheetModal } from '@gorhom/bottom-sheet';
+import { BottomSheetModal, BottomSheetScrollView } from '@gorhom/bottom-sheet';
 
+import SportCard from '~/screens/Map/components/SportCard/SportCard';
 import { MarkerItem } from '~/screens/Map/types';
-import SportCard from '~/screens/SportCard/SportCard';
 
 type BottomSheetComponentProps = {
   bottomSheetRef: React.RefObject<BottomSheetModal>;
@@ -28,7 +28,9 @@ const BottomSheetComponent = (props: BottomSheetComponentProps) => {
       onDismiss={onClose}
       enablePanDownToClose
     >
-      <SportCard currentMarker={currentMarker} />
+      <BottomSheetScrollView showsVerticalScrollIndicator={false}>
+        <SportCard currentMarker={currentMarker} />
+      </BottomSheetScrollView>
     </BottomSheetModal>
   );
 };

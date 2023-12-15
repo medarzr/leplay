@@ -6,4 +6,5 @@ export const colors = {
   orange: '#F5B879',
   grayDescriptionTitleText: '#8E8E93',
   grayDescriptionText: '#5A5A5A',
+  orangeButton: '#FFA350',
 };

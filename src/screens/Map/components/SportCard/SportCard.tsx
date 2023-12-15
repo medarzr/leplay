@@ -1,19 +1,22 @@
 import React from 'react';
 
 import { View, Text, StyleSheet } from 'react-native';
+import FontAwesome from 'react-native-vector-icons/FontAwesome5';
 
+import Button from '~/components/Button/Button';
 import { i18n } from '~/lib/localization/localize';
 import { colors } from '~/lib/theme/colors';
 
-import { MarkerItem } from '../Map/types';
+import { MarkerItem } from '../../types';
 
+import ScheduleComponent from './components/ScheduleComponent';
 import SportsIcons from './components/SportsIcons';
 
 type BottomSheetComponentProps = {
   currentMarker: MarkerItem | undefined;
 };
 
-const DescriptionTitle: React.FC<{ title: string }> = ({ title }) => (
+export const DescriptionTitle: React.FC<{ title: string }> = ({ title }) => (
   <View style={{ paddingBottom: 10 }}>
     <Text style={styles.descriptionTitleText}>{title}</Text>
   </View>
@@ -21,7 +24,7 @@ const DescriptionTitle: React.FC<{ title: string }> = ({ title }) => (
 
 const SportCard = (props: BottomSheetComponentProps) => {
   const { currentMarker } = props;
-
+  const { schedule } = currentMarker ?? {};
   return (
     <View style={styles.container}>
       {currentMarker && (
@@ -30,9 +33,32 @@ const SportCard = (props: BottomSheetComponentProps) => {
             <Text style={styles.title}>{currentMarker?.title}</Text>
             <SportsIcons type={currentMarker?.type} />
           </View>
+          {schedule && <ScheduleComponent schedule={schedule} />}
+          <View style={styles.itemContainer}>
+            <FontAwesome
+              name={'map-marker'}
+              size={16}
+              color={colors.primaryGreen}
+              style={{ marginRight: 10 }}
+            />
+            <View style={{ flex: 1 }}>
+              <Text style={styles.organizerText}>{currentMarker?.address}</Text>
+            </View>
+          </View>
           <View style={styles.itemContainer}>
             <DescriptionTitle title={i18n.t('sportCard.organizer')} />
             <Text style={styles.organizerText}>{currentMarker?.organizer}</Text>
+          </View>
+          <View style={styles.itemContainer}>
+            <DescriptionTitle title={i18n.t('sportCard.numberOfPlayers')} />
+            <Text
+              style={[
+                styles.organizerText,
+                { color: colors.grayDescriptionText },
+              ]}
+            >
+              15
+            </Text>
           </View>
           <DescriptionTitle title={i18n.t('sportCard.description')} />
           <Text
@@ -43,6 +69,7 @@ const SportCard = (props: BottomSheetComponentProps) => {
           >
             {currentMarker?.description}
           </Text>
+          <Button buttonStyle={{ margin: 24 }} buttonTitle="Отправить заявку" />
         </>
       )}
     </View>

@@ -1,10 +1,30 @@
 {
-  "test": "hello",
   "notifications": {
     "geoError": "Error! Please allow the application to use geolocation"
   },  
   "sportCard": {
     "description": "Description",
-    "organizer": "Organizer: "
+    "organizer": "Organizer: ",
+    "schedule": "Schedule: ",
+    "numberOfPlayers": "Number of players: "
+  },
+  "auth": {
+    "login": "Login",
+    "registration": "Registration",
+    "forgotPass": "Forgot your password?",
+    "password": "Password",
+    "loginToApp": "Login"
+  },
+  "errors": {
+    "fieldRequired": "Fill in this field",
+    "email": "Enter valid email",
+    "notMoreThanSymbols": {
+      "one": "No more than %{count} character",
+      "other": "No more than %{count} characters"
+    },
+    "notLessThanSymbols": {
+      "one": "No less than %{count} character",
+      "other": "No less than %{count} characters"
+    }
   }
 }

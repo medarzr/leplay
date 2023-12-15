@@ -10,6 +10,10 @@ export enum SportsType {
   Football = 'football',
   BasketBall = 'basketball',
 }
+export type ScheduleItem = {
+  day: string;
+  time: string;
+};
 export interface MarkerItem {
   id: number;
   latitude: number;
@@ -18,4 +22,6 @@ export interface MarkerItem {
   organizer: string;
   description: string;
   type: SportsType;
+  schedule: ScheduleItem[];
+  address: string;
 }

@@ -18,6 +18,21 @@ const MARKERS: MarkerItem[] = [
     title: 'Футбол',
     organizer: 'Алексей Иванов',
     type: SportsType.Football,
+    schedule: [
+      {
+        day: 'пн',
+        time: '19:00 - 21:00',
+      },
+      {
+        day: 'ср',
+        time: '19:00 - 21:00',
+      },
+      {
+        day: 'пт',
+        time: '19:00 - 21:00',
+      },
+    ],
+    address: `Баскетбольная площадка на ул. Строителей, д. 17 к. 2`,
     description:
       'Всем привет! Ежедневно в будни вы можете полноценно поиграть во дворе на улице Строителей и хорошо провести время.',
   },
@@ -28,6 +43,21 @@ const MARKERS: MarkerItem[] = [
     title: 'Баскетбол',
     organizer: 'Алексей Иванов',
     type: SportsType.BasketBall,
+    schedule: [
+      {
+        day: 'пн',
+        time: '19:00 - 21:00',
+      },
+      {
+        day: 'ср',
+        time: '19:00 - 21:00',
+      },
+      {
+        day: 'пт',
+        time: '19:00 - 21:00',
+      },
+    ],
+    address: `Баскетбольная площадка на ул. Строителей, д. 17 к. 2`,
     description:
       'Всем привет! Ежедневно в будни вы можете полноценно поиграть во дворе на улице Строителей и хорошо провести время.',
   },
@@ -38,6 +68,21 @@ const MARKERS: MarkerItem[] = [
     title: 'Волейбол',
     organizer: 'Алексей Иванов',
     type: SportsType.Volleyball,
+    schedule: [
+      {
+        day: 'пн',
+        time: '19:00 - 21:00',
+      },
+      {
+        day: 'ср',
+        time: '19:00 - 21:00',
+      },
+      {
+        day: 'пт',
+        time: '19:00 - 21:00',
+      },
+    ],
+    address: `Баскетбольная площадка на ул. Строителей, д. 17 к. 2`,
     description:
       'Всем привет! Ежедневно в будни вы можете полноценно поиграть во дворе на улице Строителей и хорошо провести время.',
   },
@@ -86,7 +131,6 @@ export default function MapScreen() {
           onDragEnd={e => alert(JSON.stringify(e.nativeEvent.coordinate))}
           title={'Test Marker'}
           description={'This is a description of the marker'}
-          onPress={() => bottomSheetRef.current?.present()}
         />
         <MyLocationButton animateToLocation={coords => animateTo(coords)} />
       </MapView>

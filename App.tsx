@@ -6,6 +6,7 @@ import { BottomSheetModalProvider } from '~/components/BottomSheet/BottomSheetMo
 import { Compose } from '~/components/Compose';
 import { GestureHandlerProvider } from '~/lib/gestureHandler';
 import { ToastProvider } from '~/lib/notify/ToastProvider';
+import { SafeAreaProvider } from '~/lib/safeAreaContext';
 import { ThemeProvider } from '~/lib/theme/ThemeProvider';
 import { NavigationProvider } from '~/navigation/NavigationProvider';
 import RootNavigator from '~/navigation/navigators/RootNavigator';
@@ -16,6 +17,7 @@ function App(): JSX.Element {
       <Compose
         components={[
           GestureHandlerProvider,
+          SafeAreaProvider,
           ThemeProvider,
           BottomSheetModalProvider,
           NavigationProvider,

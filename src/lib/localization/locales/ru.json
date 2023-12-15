@@ -1,10 +1,30 @@
 {
-  "test": "привет",
   "notifications": {
     "geoError": "Ошибка! Пожалуйста, разрешите приложению использовать геолокацию"
   },
   "sportCard": {
     "description": "Описание",
-    "organizer": "Организатор: "
+    "organizer": "Организатор: ",
+    "schedule": "Расписание: ",
+    "numberOfPlayers": "Количество игроков: "
+  },
+  "auth": {
+    "login": "Вход",
+    "registration": "Регистрация",
+    "forgotPass": "Забыли пароль?",
+    "password": "Пароль",
+    "loginToApp": "Войти"
+  },
+  "errors": {
+    "fieldRequired": "Заполните это поле",
+    "email": "Введите валидную почту",
+    "notMoreThanSymbols": {
+      "one": "Не больше %{count} символа",
+      "other": "Не больше %{count} символов"
+    },
+    "notLessThanSymbols": {
+      "one": "Не меньше %{count} символа",
+      "other": "Не меньше %{count} символов"
+    }
   }
 }
