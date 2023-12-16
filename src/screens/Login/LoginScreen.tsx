@@ -1,37 +1,37 @@
 import React, { useState } from 'react';
 
 import { FormikProvider } from 'formik';
-import { View, StyleSheet } from 'react-native';
 
 import { KeyboardAvoidingProvider } from '~/components/KeyboardAvoiding/KeyboardAvoidingProvider';
 
 import Header from './components/Header';
 import LoginForm from './components/LoginForm';
+import RegistrationForm from './components/RegistrationForm';
 import { useLoginForm } from './hooks/useLoginForm';
+import { useRegistrationForm } from './hooks/useRegistrationForm';
 import { ScreenType } from './types';
 
 export default function LoginScreen() {
   const [selector, setSelector] = useState<ScreenType>(ScreenType.Login);
-  const { formik } = useLoginForm();
+  const { formik: loginFormik } = useLoginForm();
+  const { formik: registrationFormik } = useRegistrationForm();
   return (
     <KeyboardAvoidingProvider>
       <Header
         selector={selector}
         setSelector={(screen: ScreenType) => setSelector(screen)}
       />
-      <FormikProvider value={formik}>
-        <View style={styles.formContainer}>
-          {selector === ScreenType.Registration ? <View /> : <LoginForm />}
-        </View>
-      </FormikProvider>
+      <>
+        {selector === ScreenType.Registration ? (
+          <FormikProvider value={registrationFormik}>
+            <RegistrationForm />
+          </FormikProvider>
+        ) : (
+          <FormikProvider value={loginFormik}>
+            <LoginForm />
+          </FormikProvider>
+        )}
+      </>
     </KeyboardAvoidingProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  formContainer: {
-    flex: 0.55,
-
-    // marginHorizontal: 45,
-  },
-});

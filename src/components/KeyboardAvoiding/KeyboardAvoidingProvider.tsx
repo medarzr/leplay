@@ -1,13 +1,27 @@
-import React, { FC, PropsWithChildren, useCallback } from 'react';
+import React, { FC, useCallback } from 'react';
 
 import { useFocusEffect } from '@react-navigation/native';
-import { ScrollView, StyleSheet } from 'react-native';
+import {
+  ScrollView,
+  StyleProp,
+  StyleSheet,
+  View,
+  ViewStyle,
+} from 'react-native';
 import { AvoidSoftInput } from 'react-native-avoid-softinput';
 
 import { colors } from '~/lib/theme/colors';
 
-export const KeyboardAvoidingProvider: FC<PropsWithChildren> = ({
+interface KeyboardAvoidingProviderProps {
+  children: React.ReactNode;
+  contentContainerStyle?: StyleProp<ViewStyle>;
+  style?: StyleProp<ViewStyle>;
+}
+
+export const KeyboardAvoidingProvider: FC<KeyboardAvoidingProviderProps> = ({
   children,
+  contentContainerStyle,
+  style,
 }) => {
   const onFocusEffect = useCallback(() => {
     // This should be run when screen gains focus - enable the module where it's needed
@@ -25,17 +39,20 @@ export const KeyboardAvoidingProvider: FC<PropsWithChildren> = ({
   return (
     <ScrollView
       bounces={false}
-      contentContainerStyle={styles.container}
-      style={{ backgroundColor: colors.white }}
+      contentContainerStyle={{
+        ...styles.container,
+        ...(contentContainerStyle as ViewStyle),
+      }}
+      style={{ backgroundColor: colors.white, ...(style as ViewStyle) }}
     >
-      {children}
+      <View style={{ flex: 1 }}>{children}</View>
     </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexGrow: 1,
     backgroundColor: colors.white,
   },
 });

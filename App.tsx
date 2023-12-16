@@ -4,6 +4,7 @@ import { View } from 'react-native';
 
 import { BottomSheetModalProvider } from '~/components/BottomSheet/BottomSheetModalProvider';
 import { Compose } from '~/components/Compose';
+import { ModalProvider } from '~/components/Modal/hooks/useModalContext';
 import { GestureHandlerProvider } from '~/lib/gestureHandler';
 import { ToastProvider } from '~/lib/notify/ToastProvider';
 import { SafeAreaProvider } from '~/lib/safeAreaContext';
@@ -21,6 +22,7 @@ function App(): JSX.Element {
           ThemeProvider,
           BottomSheetModalProvider,
           NavigationProvider,
+          ModalProvider,
         ]}
       >
         <RootNavigator />

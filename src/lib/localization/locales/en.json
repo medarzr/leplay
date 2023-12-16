@@ -13,7 +13,11 @@
     "registration": "Registration",
     "forgotPass": "Forgot your password?",
     "password": "Password",
-    "loginToApp": "Login"
+    "loginToApp": "Login",
+    "repeatPass": "Repeat password",
+    "changePass": "Change password",
+    "changePassDesc": "Enter your email address and we will send you a code to change your password",
+    "send": "Send"
   },
   "errors": {
     "fieldRequired": "Fill in this field",
@@ -25,6 +29,7 @@
     "notLessThanSymbols": {
       "one": "No less than %{count} character",
       "other": "No less than %{count} characters"
-    }
+    },
+    "passwordsMustMatch": "Passwords must match"
   }
 }

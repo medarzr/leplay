@@ -7,4 +7,5 @@ export const colors = {
   grayDescriptionTitleText: '#8E8E93',
   grayDescriptionText: '#5A5A5A',
   orangeButton: '#FFA350',
+  overlayColor: 'rgba(0, 0, 0, 0.3)',
 };

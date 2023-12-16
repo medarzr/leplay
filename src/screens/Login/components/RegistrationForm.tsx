@@ -1,29 +1,18 @@
 import React from 'react';
 
-import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import Button from '~/components/Button/Button';
 import CustomInput from '~/components/CustomInput/CustomInput';
-import { useModal } from '~/components/Modal/hooks/useModalContext';
 import { i18n } from '~/lib/localization/localize';
 import { colors } from '~/lib/theme/colors';
 
 import { MAX_EMAIL_LENGTH, MAX_PASS_LENGTH } from '../hooks/constants';
-import { useLoginFormContext } from '../hooks/useLoginForm';
+import { useRegistrationFormContext } from '../hooks/useRegistrationForm';
 
-import ForgotPasswordModal from './ForgotPasswordModal';
-
-export default function LoginForm() {
-  const {
-    values,
-    touched,
-    handleChange,
-    handleSubmit,
-    errors,
-    isValid,
-    dirty,
-  } = useLoginFormContext();
-  const { showModal } = useModal();
+export default function RegistrationForm() {
+  const { values, touched, handleChange, handleSubmit, errors, dirty } =
+    useRegistrationFormContext();
   return (
     <View style={styles.container}>
       <>
@@ -42,31 +31,33 @@ export default function LoginForm() {
           label={i18n.t('auth.password')}
           autoComplete="password"
           keyboardType="ascii-capable"
-          returnKeyType="done"
-          value={values.password}
-          onChangeText={handleChange('password')}
+          returnKeyType="next"
+          value={values.passwordOne}
+          autoCapitalize="none"
+          onChangeText={handleChange('passwordOne')}
           maxLength={MAX_PASS_LENGTH}
-          errorMessage={touched.password ? errors.password : undefined}
+          errorMessage={touched.passwordOne ? errors.passwordOne : undefined}
+          secureTextEntry
+        />
+        <CustomInput
+          label={i18n.t('auth.repeatPass')}
+          autoComplete="password"
+          keyboardType="ascii-capable"
+          returnKeyType="done"
+          value={values.passwordTwo}
+          autoCapitalize="none"
+          onChangeText={handleChange('passwordTwo')}
+          maxLength={MAX_PASS_LENGTH}
+          errorMessage={touched.passwordTwo ? errors.passwordTwo : undefined}
           secureTextEntry
         />
       </>
-      <>
-        <TouchableOpacity
-          style={styles.forgotButtonContainer}
-          onPress={showModal}
-        >
-          <Text style={styles.buttonTextStyle}>
-            {i18n.t('auth.forgotPass')}
-          </Text>
-        </TouchableOpacity>
-        <Button
-          disabled={!isValid || !dirty}
-          onPress={() => handleSubmit()}
-          buttonTitle={i18n.t('auth.loginToApp')}
-          buttonStyle={styles.greenButtonStyle}
-        />
-      </>
-      <ForgotPasswordModal />
+      <Button
+        disabled={!dirty}
+        onPress={() => handleSubmit()}
+        buttonTitle={i18n.t('auth.loginToApp')}
+        buttonStyle={styles.greenButtonStyle}
+      />
     </View>
   );
 }
@@ -85,9 +76,8 @@ const styles = StyleSheet.create({
     marginTop: 12,
   },
   container: {
-    justifyContent: 'space-between',
-    flex: 1,
     paddingTop: 24,
     paddingHorizontal: 45,
+    flex: 1,
   },
 });

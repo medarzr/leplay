@@ -1,16 +1,11 @@
 import { useCallback, useState } from 'react';
 
-import { FormikConfig, useFormik, useFormikContext } from 'formik';
+import { FormikConfig, useFormik } from 'formik';
 import { Asserts, object, string } from 'yup';
 
 import { i18n } from '~/lib/localization/localize';
 
-import {
-  MAX_EMAIL_LENGTH,
-  MAX_PASS_LENGTH,
-  MIN_PASS_LENGTH,
-  emailRegExp,
-} from './constants';
+import { MAX_EMAIL_LENGTH, emailRegExp } from './constants';
 
 const validationSchema = object({
   email: string()
@@ -23,30 +18,18 @@ const validationSchema = object({
     .matches(emailRegExp, i18n.t('errors.email'))
     .email(i18n.t('errors.email'))
     .matches(emailRegExp, i18n.t('errors.email')),
-  password: string()
-    .default('')
-    .required(i18n.t('errors.fieldRequired'))
-    .min(
-      MIN_PASS_LENGTH,
-      i18n.t('errors.notLessThanSymbols', { count: MIN_PASS_LENGTH }),
-    )
-    .max(
-      MAX_PASS_LENGTH,
-      i18n.t('errors.notMoreThanSymbols', { count: MAX_PASS_LENGTH }),
-    ),
 });
 
-export type LoginFields = Asserts<typeof validationSchema>;
+export type ForgotPasswordFields = Asserts<typeof validationSchema>;
 
-const initialValues: LoginFields = {
+const initialValues: ForgotPasswordFields = {
   email: '',
-  password: '',
 };
 
-export const useLoginForm = () => {
+export const useForgotPasswordForm = () => {
   const [success, setSuccess] = useState(false);
 
-  const onSubmit = useCallback<FormikConfig<LoginFields>['onSubmit']>(
+  const onSubmit = useCallback<FormikConfig<ForgotPasswordFields>['onSubmit']>(
     async (values, { setSubmitting }) => {
       try {
         setSuccess(true);
@@ -59,7 +42,7 @@ export const useLoginForm = () => {
     [],
   );
 
-  const formik = useFormik<LoginFields>({
+  const formik = useFormik<ForgotPasswordFields>({
     initialValues,
     onSubmit,
     validationSchema,
@@ -71,5 +54,3 @@ export const useLoginForm = () => {
 
   return result();
 };
-
-export const useLoginFormContext = () => useFormikContext<LoginFields>();
