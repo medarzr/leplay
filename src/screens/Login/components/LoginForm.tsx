@@ -13,7 +13,11 @@ import { useLoginFormContext } from '../hooks/useLoginForm';
 
 import ForgotPasswordModal from './ForgotPasswordModal';
 
-export default function LoginForm() {
+interface LoginFormProps {
+  isPending: boolean;
+}
+
+export default function LoginForm({ isPending }: LoginFormProps) {
   const {
     values,
     touched,
@@ -60,7 +64,8 @@ export default function LoginForm() {
           </Text>
         </TouchableOpacity>
         <Button
-          disabled={!isValid || !dirty}
+          disabled={!isValid || !dirty || isPending}
+          isLoading={isPending}
           onPress={() => handleSubmit()}
           buttonTitle={i18n.t('auth.loginToApp')}
           buttonStyle={styles.greenButtonStyle}
@@ -81,7 +86,6 @@ const styles = StyleSheet.create({
     padding: 12,
   },
   greenButtonStyle: {
-    backgroundColor: colors.primaryGreen,
     marginTop: 12,
   },
   container: {

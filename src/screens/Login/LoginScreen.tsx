@@ -13,10 +13,12 @@ import { ScreenType } from './types';
 
 export default function LoginScreen() {
   const [selector, setSelector] = useState<ScreenType>(ScreenType.Login);
-  const { formik: loginFormik } = useLoginForm();
-  const { formik: registrationFormik } = useRegistrationForm();
+  const { formik: loginFormik, isPending: isLoginPending } = useLoginForm();
+  const { formik: registrationFormik, isPending: isRegistrationPending } =
+    useRegistrationForm();
+
   return (
-    <KeyboardAvoidingProvider>
+    <KeyboardAvoidingProvider noCloseKeyboard>
       <Header
         selector={selector}
         setSelector={(screen: ScreenType) => setSelector(screen)}
@@ -24,11 +26,11 @@ export default function LoginScreen() {
       <>
         {selector === ScreenType.Registration ? (
           <FormikProvider value={registrationFormik}>
-            <RegistrationForm />
+            <RegistrationForm isPending={isRegistrationPending} />
           </FormikProvider>
         ) : (
           <FormikProvider value={loginFormik}>
-            <LoginForm />
+            <LoginForm isPending={isLoginPending} />
           </FormikProvider>
         )}
       </>

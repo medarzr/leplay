@@ -17,11 +17,19 @@
     "repeatPass": "Repeat password",
     "changePass": "Change password",
     "changePassDesc": "Enter your email address and we will send you a code to change your password",
-    "send": "Send"
+    "send": "Send",
+    "enterCode": "Enter a code",
+    "codeDesc": "You can resend the code\nafter 40 seconds.",
+    "resendCode": "Resend code",
+    "firstName": "First Name",
+    "lastName": "Last Name"
   },
   "errors": {
     "fieldRequired": "Fill in this field",
     "email": "Enter valid email",
+    "incorrectCode": "Incorrect code",
+    "incorrectEmailOrPassword": "Incorrect email or password",
+    "otpError": "The code request is too frequent, please wait",
     "notMoreThanSymbols": {
       "one": "No more than %{count} character",
       "other": "No more than %{count} characters"
@@ -30,6 +38,7 @@
       "one": "No less than %{count} character",
       "other": "No less than %{count} characters"
     },
-    "passwordsMustMatch": "Passwords must match"
+    "passwordsMustMatch": "Passwords must match",
+    "errorDefault": "Unknown error =(\nTry again later"
   }
 }

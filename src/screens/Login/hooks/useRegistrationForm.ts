@@ -1,18 +1,43 @@
-import { useCallback, useState } from 'react';
+import { useCallback } from 'react';
 
 import { FormikConfig, useFormik, useFormikContext } from 'formik';
 import { Asserts, object, string, ref } from 'yup';
 
 import { i18n } from '~/lib/localization/localize';
 
+import usePostRegistration from './apiHooks/usePostRegistration';
 import {
   MAX_EMAIL_LENGTH,
+  MAX_NAME_LENGTH,
   MAX_PASS_LENGTH,
+  MIN_NAME_LENGTH,
   MIN_PASS_LENGTH,
   emailRegExp,
 } from './constants';
 
 const validationSchema = object({
+  firstName: string()
+    .default('')
+    .required(i18n.t('errors.fieldRequired'))
+    .min(
+      MIN_NAME_LENGTH,
+      i18n.t('errors.notLessThanSymbols', { count: MIN_NAME_LENGTH }),
+    )
+    .max(
+      MAX_NAME_LENGTH,
+      i18n.t('errors.notMoreThanSymbols', { count: MAX_NAME_LENGTH }),
+    ),
+  lastName: string()
+    .default('')
+    .required(i18n.t('errors.fieldRequired'))
+    .min(
+      MIN_NAME_LENGTH,
+      i18n.t('errors.notLessThanSymbols', { count: MIN_NAME_LENGTH }),
+    )
+    .max(
+      MAX_NAME_LENGTH,
+      i18n.t('errors.notMoreThanSymbols', { count: MAX_NAME_LENGTH }),
+    ),
   email: string()
     .default('')
     .required(i18n.t('errors.fieldRequired'))
@@ -23,7 +48,7 @@ const validationSchema = object({
     .matches(emailRegExp, i18n.t('errors.email'))
     .email(i18n.t('errors.email'))
     .matches(emailRegExp, i18n.t('errors.email')),
-  passwordOne: string()
+  password: string()
     .default('')
     .required(i18n.t('errors.fieldRequired'))
     .min(
@@ -37,7 +62,7 @@ const validationSchema = object({
   passwordTwo: string()
     .default('')
     .required(i18n.t('errors.fieldRequired'))
-    .oneOf([ref('passwordOne')], i18n.t('errors.passwordsMustMatch'))
+    .oneOf([ref('password')], i18n.t('errors.passwordsMustMatch'))
     .min(
       MIN_PASS_LENGTH,
       i18n.t('errors.notLessThanSymbols', { count: MIN_PASS_LENGTH }),
@@ -51,28 +76,26 @@ const validationSchema = object({
 export type RegistrationFields = Asserts<typeof validationSchema>;
 
 const initialValues: RegistrationFields = {
-  email: '',
-  passwordOne: '',
-  passwordTwo: '',
+  firstName: 'Михаил',
+  lastName: 'Загребаев',
+  email: 'raizor@bk.ru',
+  password: '12345678',
+  passwordTwo: '12345678',
 };
 
 export const useRegistrationForm = () => {
-  const [success, setSuccess] = useState(false);
+  const { mutate, isPending } = usePostRegistration();
 
   const onSubmit = useCallback<FormikConfig<RegistrationFields>['onSubmit']>(
-    async (values, { setSubmitting }) => {
+    async values => {
       try {
-        setSuccess(true);
-        console.log('values', values);
+        mutate(values);
       } catch (error) {
         console.log('error', error);
-      } finally {
-        setSubmitting(false);
       }
     },
     [],
   );
-
   const formik = useFormik<RegistrationFields>({
     initialValues,
     onSubmit,
@@ -80,8 +103,8 @@ export const useRegistrationForm = () => {
   });
 
   const result = useCallback(() => {
-    return { formik, success };
-  }, [formik, success]);
+    return { formik, isPending };
+  }, [formik, isPending]);
 
   return result();
 };

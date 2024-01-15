@@ -1,10 +1,11 @@
-import { useCallback, useState } from 'react';
+import { useCallback } from 'react';
 
 import { FormikConfig, useFormik, useFormikContext } from 'formik';
 import { Asserts, object, string } from 'yup';
 
 import { i18n } from '~/lib/localization/localize';
 
+import useGetAuth from './apiHooks/useGetAuth';
 import {
   MAX_EMAIL_LENGTH,
   MAX_PASS_LENGTH,
@@ -44,12 +45,11 @@ const initialValues: LoginFields = {
 };
 
 export const useLoginForm = () => {
-  const [success, setSuccess] = useState(false);
-
+  const { mutate, isPending } = useGetAuth();
   const onSubmit = useCallback<FormikConfig<LoginFields>['onSubmit']>(
-    async (values, { setSubmitting }) => {
+    (values, { setSubmitting }) => {
       try {
-        setSuccess(true);
+        mutate(values);
       } catch (error) {
         console.log('error', error);
       } finally {
@@ -66,8 +66,8 @@ export const useLoginForm = () => {
   });
 
   const result = useCallback(() => {
-    return { formik, success };
-  }, [formik, success]);
+    return { formik, isPending };
+  }, [formik, isPending]);
 
   return result();
 };

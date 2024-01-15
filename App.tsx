@@ -7,6 +7,7 @@ import { Compose } from '~/components/Compose';
 import { ModalProvider } from '~/components/Modal/hooks/useModalContext';
 import { GestureHandlerProvider } from '~/lib/gestureHandler';
 import { ToastProvider } from '~/lib/notify/ToastProvider';
+import { QueryProvider } from '~/lib/queryProvider';
 import { SafeAreaProvider } from '~/lib/safeAreaContext';
 import { ThemeProvider } from '~/lib/theme/ThemeProvider';
 import { NavigationProvider } from '~/navigation/NavigationProvider';
@@ -22,6 +23,7 @@ function App(): JSX.Element {
           ThemeProvider,
           BottomSheetModalProvider,
           NavigationProvider,
+          QueryProvider,
           ModalProvider,
         ]}
       >

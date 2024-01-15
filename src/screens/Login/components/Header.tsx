@@ -1,17 +1,21 @@
+/* eslint-disable no-restricted-imports */
 import React from 'react';
 
+import { useRoute } from '@react-navigation/native';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 import { SvgIcons } from '~/assets/svg';
 import { i18n } from '~/lib/localization/localize';
 import { colors } from '~/lib/theme/colors';
+import { useNavigation } from '~/navigation/navigators/hooks/useNavigation';
 import { entireScreenHeight } from '~/utils/device';
 
 import { ScreenType } from '../types';
 
 interface HeaderProps {
-  selector: ScreenType;
-  setSelector: (screen: ScreenType) => void;
+  selector?: ScreenType;
+  setSelector?: (screen: ScreenType) => void;
 }
 
 interface SelectButtonProps {
@@ -35,24 +39,40 @@ const SelectButton = ({
 
 export default function Header(props: HeaderProps) {
   const { selector, setSelector } = props;
+  const navigation = useNavigation();
+  const route = useRoute();
   return (
     <View style={styles.upComponent}>
       <View style={styles.inUpContainer}>
+        {route.name !== 'LoginScreen' && (
+          <TouchableOpacity
+            style={{ position: 'absolute', top: 30, left: 20 }}
+            onPress={() => navigation.goBack()}
+          >
+            <MaterialIcons
+              name={'arrow-back-ios'}
+              size={24}
+              color={colors.black}
+            />
+          </TouchableOpacity>
+        )}
         <SvgIcons.LeplayLogo />
-        <View style={styles.buttonContainer}>
-          <SelectButton
-            title={i18n.t('auth.login')}
-            selector={selector}
-            typeOfButton={ScreenType.Login}
-            onPress={() => setSelector(ScreenType.Login)}
-          />
-          <SelectButton
-            title={i18n.t('auth.registration')}
-            selector={selector}
-            typeOfButton={ScreenType.Registration}
-            onPress={() => setSelector(ScreenType.Registration)}
-          />
-        </View>
+        {selector && setSelector && (
+          <View style={styles.buttonContainer}>
+            <SelectButton
+              title={i18n.t('auth.login')}
+              selector={selector}
+              typeOfButton={ScreenType.Login}
+              onPress={() => setSelector(ScreenType.Login)}
+            />
+            <SelectButton
+              title={i18n.t('auth.registration')}
+              selector={selector}
+              typeOfButton={ScreenType.Registration}
+              onPress={() => setSelector(ScreenType.Registration)}
+            />
+          </View>
+        )}
       </View>
     </View>
   );

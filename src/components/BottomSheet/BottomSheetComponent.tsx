@@ -16,15 +16,15 @@ const BottomSheetComponent = (props: BottomSheetComponentProps) => {
 
   const snapPoints = useMemo(() => ['50%', '50%'], []);
 
-  const handleSheetChanges = useCallback((index: number) => {
-    console.log('handleSheetChanges', index);
-  }, []);
+  // const handleSheetChanges = useCallback((index: number) => {
+  //   console.log('handleSheetChanges', index);
+  // }, []);
   return (
     <BottomSheetModal
       ref={bottomSheetRef}
       index={1}
       snapPoints={snapPoints}
-      onChange={handleSheetChanges}
+      // onChange={handleSheetChanges}
       onDismiss={onClose}
       enablePanDownToClose
     >

@@ -69,7 +69,10 @@ const SportCard = (props: BottomSheetComponentProps) => {
           >
             {currentMarker?.description}
           </Text>
-          <Button buttonStyle={{ margin: 24 }} buttonTitle="Отправить заявку" />
+          <Button
+            buttonStyle={styles.buttonCoontainer}
+            buttonTitle="Отправить заявку"
+          />
         </>
       )}
     </View>
@@ -81,7 +84,6 @@ export default SportCard;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: 'red',
     paddingHorizontal: 20,
   },
   title: {
@@ -108,5 +110,9 @@ const styles = StyleSheet.create({
   itemContainer: {
     flexDirection: 'row',
     paddingBottom: 14,
+  },
+  buttonCoontainer: {
+    margin: 24,
+    backgroundColor: colors.orangeButton,
   },
 });

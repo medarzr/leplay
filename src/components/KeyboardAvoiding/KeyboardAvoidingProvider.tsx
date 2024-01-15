@@ -16,12 +16,14 @@ interface KeyboardAvoidingProviderProps {
   children: React.ReactNode;
   contentContainerStyle?: StyleProp<ViewStyle>;
   style?: StyleProp<ViewStyle>;
+  noCloseKeyboard?: boolean;
 }
 
 export const KeyboardAvoidingProvider: FC<KeyboardAvoidingProviderProps> = ({
   children,
   contentContainerStyle,
   style,
+  noCloseKeyboard,
 }) => {
   const onFocusEffect = useCallback(() => {
     // This should be run when screen gains focus - enable the module where it's needed
@@ -30,12 +32,14 @@ export const KeyboardAvoidingProvider: FC<KeyboardAvoidingProviderProps> = ({
     AvoidSoftInput.setAvoidOffset(30);
     return () => {
       // This should be run when screen loses focus - disable the module where it's not needed, to make a cleanup
-      AvoidSoftInput.setEnabled(false);
-      AvoidSoftInput.setShouldMimicIOSBehavior(false);
+      if (!noCloseKeyboard) {
+        AvoidSoftInput.setEnabled(false);
+        AvoidSoftInput.setShouldMimicIOSBehavior(false);
+      }
     };
   }, []);
 
-  useFocusEffect(onFocusEffect); //
+  useFocusEffect(onFocusEffect);
   return (
     <ScrollView
       bounces={false}

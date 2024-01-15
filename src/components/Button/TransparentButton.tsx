@@ -16,10 +16,17 @@ interface ButtonProps extends PressableProps {
   buttonTitle: string;
   buttonStyle?: StyleProp<ViewStyle>;
   isLoading?: boolean;
+  activityColor?: string;
 }
 
-const Button = (props: ButtonProps) => {
-  const { buttonTitle, buttonStyle, disabled, isLoading } = props;
+const TransparentButton = (props: ButtonProps) => {
+  const {
+    buttonTitle,
+    buttonStyle,
+    disabled,
+    isLoading,
+    activityColor = colors.white,
+  } = props;
   return (
     <Pressable
       style={({ pressed }) => [
@@ -33,25 +40,23 @@ const Button = (props: ButtonProps) => {
       {...props}
     >
       {isLoading ? (
-        <ActivityIndicator color={colors.white} />
+        <ActivityIndicator color={activityColor} />
       ) : (
-        <Text style={styles.text}>{buttonTitle}</Text>
+        <Text style={styles.buttonText}>{buttonTitle}</Text>
       )}
     </Pressable>
   );
 };
 
-export default Button;
+export default TransparentButton;
 
 const styles = StyleSheet.create({
-  text: {
-    color: colors.white,
+  buttonText: {
+    color: colors.primaryGreen,
     fontSize: 16,
-    fontWeight: '500',
+    fontWeight: '300',
   },
   buttonStyle: {
-    backgroundColor: colors.primaryGreen,
-    borderRadius: 32,
     padding: 14,
     justifyContent: 'center',
     alignItems: 'center',

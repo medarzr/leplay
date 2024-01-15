@@ -18,6 +18,7 @@ interface ModalProps {
   children: React.ReactNode;
   title: string;
   description?: string;
+  noCloseKeyboard?: boolean;
 }
 
 export default function Modal({ children, title, description }: ModalProps) {
@@ -27,6 +28,7 @@ export default function Modal({ children, title, description }: ModalProps) {
       <KeyboardAvoidingProvider
         contentContainerStyle={{ backgroundColor: 'transparent' }}
         style={{ backgroundColor: colors.overlayColor }}
+        noCloseKeyboard
       >
         <View style={styles.container}>
           <Pressable style={styles.modalOverlay} onPress={hideModal} />
@@ -45,7 +47,6 @@ export default function Modal({ children, title, description }: ModalProps) {
 
 const styles = StyleSheet.create({
   container: {
-    // backgroundColor: colors.overlayColor,
     flex: 1,
     justifyContent: 'center',
   },
@@ -55,7 +56,6 @@ const styles = StyleSheet.create({
     paddingVertical: 30,
     borderRadius: 32,
     margin: 14,
-    // alignItems: 'center',
   },
   modalOverlay: {
     position: 'absolute',

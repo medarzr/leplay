@@ -5,6 +5,7 @@ import { StyleSheet } from 'react-native';
 import Button from '~/components/Button/Button';
 import CustomInput from '~/components/CustomInput/CustomInput';
 import Modal from '~/components/Modal/Modal';
+import { useModal } from '~/components/Modal/hooks/useModalContext';
 import { i18n } from '~/lib/localization/localize';
 import { colors } from '~/lib/theme/colors';
 
@@ -13,16 +14,14 @@ import { useForgotPasswordForm } from '../hooks/useForgotPasswordForm';
 
 export default function ForgotPasswordModal() {
   const {
-    formik: {
-      values,
-      handleChange,
-      touched,
-      errors,
-      handleSubmit,
-      isValid,
-      dirty,
-    },
+    formik: { values, handleChange, touched, errors },
   } = useForgotPasswordForm();
+  const { hideModal } = useModal();
+  const onCloseModal = () => {
+    setTimeout(() => {
+      hideModal();
+    }, 0);
+  };
   return (
     <Modal
       title={i18n.t('auth.changePass')}
@@ -40,10 +39,11 @@ export default function ForgotPasswordModal() {
         errorMessage={touched.email ? errors.email : undefined}
       />
       <Button
-        disabled={!isValid || !dirty}
-        onPress={() => handleSubmit()}
+        // disabled={!isValid || !dirty}
+        // onPress={() => handleSubmit()}
         buttonTitle={i18n.t('auth.send')}
         buttonStyle={{ ...styles.greenButtonStyle }}
+        onPress={onCloseModal}
       />
     </Modal>
   );
@@ -59,7 +59,6 @@ const styles = StyleSheet.create({
     padding: 12,
   },
   greenButtonStyle: {
-    backgroundColor: colors.primaryGreen,
     marginTop: 12,
   },
   container: {

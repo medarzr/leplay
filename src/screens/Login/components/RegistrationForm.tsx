@@ -7,15 +7,41 @@ import CustomInput from '~/components/CustomInput/CustomInput';
 import { i18n } from '~/lib/localization/localize';
 import { colors } from '~/lib/theme/colors';
 
-import { MAX_EMAIL_LENGTH, MAX_PASS_LENGTH } from '../hooks/constants';
+import {
+  MAX_EMAIL_LENGTH,
+  MAX_NAME_LENGTH,
+  MAX_PASS_LENGTH,
+} from '../hooks/constants';
 import { useRegistrationFormContext } from '../hooks/useRegistrationForm';
 
-export default function RegistrationForm() {
+interface RegistrationFormProps {
+  isPending: boolean;
+}
+
+export default function RegistrationForm({ isPending }: RegistrationFormProps) {
   const { values, touched, handleChange, handleSubmit, errors, dirty } =
     useRegistrationFormContext();
   return (
     <View style={styles.container}>
       <>
+        <CustomInput
+          label={i18n.t('auth.firstName')}
+          autoComplete="name"
+          returnKeyType="next"
+          value={values.firstName}
+          onChangeText={handleChange('firstName')}
+          maxLength={MAX_NAME_LENGTH}
+          errorMessage={touched.firstName ? errors.firstName : undefined}
+        />
+        <CustomInput
+          label={i18n.t('auth.lastName')}
+          autoComplete="name-family"
+          returnKeyType="next"
+          value={values.lastName}
+          onChangeText={handleChange('lastName')}
+          maxLength={MAX_NAME_LENGTH}
+          errorMessage={touched.lastName ? errors.lastName : undefined}
+        />
         <CustomInput
           label="Email"
           autoComplete="email"
@@ -32,11 +58,11 @@ export default function RegistrationForm() {
           autoComplete="password"
           keyboardType="ascii-capable"
           returnKeyType="next"
-          value={values.passwordOne}
+          value={values.password}
           autoCapitalize="none"
-          onChangeText={handleChange('passwordOne')}
+          onChangeText={handleChange('password')}
           maxLength={MAX_PASS_LENGTH}
-          errorMessage={touched.passwordOne ? errors.passwordOne : undefined}
+          errorMessage={touched.password ? errors.password : undefined}
           secureTextEntry
         />
         <CustomInput
@@ -53,7 +79,8 @@ export default function RegistrationForm() {
         />
       </>
       <Button
-        disabled={!dirty}
+        disabled={!dirty || isPending}
+        isLoading={isPending}
         onPress={() => handleSubmit()}
         buttonTitle={i18n.t('auth.loginToApp')}
         buttonStyle={styles.greenButtonStyle}
@@ -72,7 +99,6 @@ const styles = StyleSheet.create({
     padding: 12,
   },
   greenButtonStyle: {
-    backgroundColor: colors.primaryGreen,
     marginTop: 12,
   },
   container: {

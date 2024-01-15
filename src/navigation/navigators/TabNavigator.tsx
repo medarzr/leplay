@@ -5,9 +5,10 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { Icon } from 'react-native-vector-icons/Icon';
 
 import { colors } from '~/lib/theme/colors';
-import LoginScreen from '~/screens/Login/LoginScreen';
 
 import HomeScreen from '../../screens/Map/MapScreen';
+
+import LoginNavigator from './LoginNavigator';
 
 const Tab = createBottomTabNavigator();
 
@@ -32,7 +33,7 @@ export default function TabNavigator() {
       />
       <Tab.Screen
         name="Login"
-        component={LoginScreen}
+        component={LoginNavigator}
         options={{
           tabBarIcon: tabBarIcon(FontAwesome, 'user'),
           headerShown: false,

@@ -6,8 +6,6 @@ const theme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    // background: colors.white,
-    // primary: colors.primary,
   },
 };
 
