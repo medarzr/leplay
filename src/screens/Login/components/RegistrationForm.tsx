@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
     padding: 12,
   },
   greenButtonStyle: {
-    marginTop: 12,
+    marginVertical: 12,
   },
   container: {
     paddingTop: 24,

@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     padding: 12,
   },
   greenButtonStyle: {
-    marginTop: 12,
+    marginVertical: 12,
   },
   container: {
     justifyContent: 'space-between',

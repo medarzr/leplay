@@ -6855,6 +6855,11 @@ react-native-avoid-softinput@^4.0.2:
   resolved "https://registry.yarnpkg.com/react-native-avoid-softinput/-/react-native-avoid-softinput-4.0.2.tgz#30825e7666b530c5d3e555a7778bd50f1431d0c3"
   integrity sha512-/i8xNWGjpu3hEPCVjW2WsWTsM/mC4zTBr3DabOrdPfgw9Ww0Na69YQY1TSXCjbTjJmWwfTToPK5OEVm+ZwHmiQ==
 
+react-native-config@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/react-native-config/-/react-native-config-1.5.1.tgz#73c94f511493e9b7ff9350cdf351d203a1b05acc"
+  integrity sha512-g1xNgt1tV95FCX+iWz6YJonxXkQX0GdD3fB8xQtR1GUBEqweB9zMROW77gi2TygmYmUkBI7LU4pES+zcTyK4HA==
+
 react-native-confirmation-code-field@^7.3.2:
   version "7.3.2"
   resolved "https://registry.yarnpkg.com/react-native-confirmation-code-field/-/react-native-confirmation-code-field-7.3.2.tgz#f0ee9e72f632aa2ae4dade4a1664a7a484885ea8"

@@ -1,9 +1,10 @@
 import axios from 'axios';
+import Config from 'react-native-config';
 
 import { RegistrationDataType } from './types';
 
-const apiReg = 'http://195.133.197.191:8001/api';
-const apiAuth = 'http://195.133.197.191:8002/api';
+const apiReg = Config.API_REGISTRATION;
+const apiAuth = Config.API_AUTHENTICATION;
 
 const getAxiosRequestWithToken = (accessToken: string) =>
   axios.create({

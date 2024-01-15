@@ -76,11 +76,11 @@ const validationSchema = object({
 export type RegistrationFields = Asserts<typeof validationSchema>;
 
 const initialValues: RegistrationFields = {
-  firstName: 'Михаил',
-  lastName: 'Загребаев',
-  email: 'raizor@bk.ru',
-  password: '12345678',
-  passwordTwo: '12345678',
+  firstName: '',
+  lastName: '',
+  email: '',
+  password: '',
+  passwordTwo: '',
 };
 
 export const useRegistrationForm = () => {

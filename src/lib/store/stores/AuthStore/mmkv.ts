@@ -1,9 +1,10 @@
+import Config from 'react-native-config';
 import { MMKV } from 'react-native-mmkv';
 import { StateStorage } from 'zustand/middleware';
 
 const storage = new MMKV({
   id: `user-storage`,
-  encryptionKey: 'userEncryptionKey',
+  encryptionKey: Config.USER_ENCRIPTION_KEY,
 });
 
 export const zustandStorage: StateStorage = {

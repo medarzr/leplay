@@ -1,6 +1,8 @@
 apply plugin: "com.android.application"
 apply plugin: "com.facebook.react"
 
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
+
 apply from: file("../../node_modules/react-native-vector-icons/fonts.gradle")
 
 /**
@@ -80,6 +82,7 @@ android {
         applicationId "com.leplay"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
+        resValue "string", "build_config_package", "com.leplay"
         versionCode 1
         versionName "1.0"
     }
